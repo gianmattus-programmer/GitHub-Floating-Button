@@ -6,10 +6,10 @@ Este repositorio contiene el código necesario para generar un botón flotante q
 
 La magia detrás de este botón flotante reside en la combinación de GitHub y jsDelivr:
 
-1.  **GitHub: Tu Almacén de Código (`github.js`)**
-    * Dentro de este repositorio, el archivo `github.js` contiene todo el código JavaScript necesario para crear y gestionar el botón flotante en tu página web.
-    * Actualmente, el script está configurado para redirigir a: `https://github.com/gianmattus-programmer`. **Recuerda modificar esta URL en tu archivo `github.js` para que apunte a tu propio perfil de GitHub.**
-    * **Ejemplo simple dentro de `github.js`:**
+1.  **GitHub: Tu Almacén de Código (`script.js`)**
+    * Dentro de este repositorio, el archivo `script.js` contiene todo el código JavaScript necesario para crear y gestionar el botón flotante en tu página web.
+    * Actualmente, el script está configurado para redirigir a: `https://github.com/gianmattus-programmer`. **Recuerda modificar esta URL en tu archivo `script.js` para que apunte a tu propio perfil de GitHub.**
+    * **Ejemplo simple dentro de `script.js`:**
         ```javascript
         const githubButton = document.createElement("a");
         githubButton.href = "https://github.com/gianmattus-programmer"; // ¡CAMBIA ESTA URL!
@@ -23,38 +23,38 @@ La magia detrás de este botón flotante reside en la combinación de GitHub y j
     * jsDelivr interpreta la estructura de tu repositorio y te proporciona una URL pública para acceder directamente a tus archivos.
     * **URL de jsDelivr para este script:**
         ```bash
-        https://cdn.jsdelivr.net/gh/gianmattus-programmer/GitHub-Floating-Button/github.js
+        https://cdn.jsdelivr.net/gh/gianmattus-programmer/GitHub-Floating-Button/dist/script.js
         ```
     * En esta URL:
         * `cdn.jsdelivr.net`: Es el dominio de jsDelivr.
         * `/gh/`: Indica que se está sirviendo contenido desde GitHub.
         * `gianmattus-programmer`: Es el nombre de usuario de GitHub del propietario del repositorio.
         * `GitHub-Floating-Button`: Es el nombre de este repositorio.
-        * `/github.js`: Es el archivo JavaScript dentro del repositorio.
+        * `/script.js`: Es el archivo JavaScript dentro del repositorio.
 
 3.  **Integración en tu HTML**
     * Para utilizar este botón flotante en tu página web, simplemente necesitas incluir la siguiente etiqueta `<script>` en cualquier lugar dentro de las etiquetas `<body>` de tu archivo HTML:
         ```html
-        <script src="https://cdn.jsdelivr.net/gh/gianmattus-programmer/GitHub-Floating-Button/github.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/gianmattus-programmer/GitHub-Floating-Button/dist/script.js"></script>
         ```
     * **¿Qué sucede al incluir esta línea?**
-        1.  El navegador del visitante de tu web descarga automáticamente el archivo `github.js` desde la CDN de jsDelivr.
-        2.  El navegador ejecuta el código JavaScript contenido en `github.js`.
+        1.  El navegador del visitante de tu web descarga automáticamente el archivo `script.js` desde la CDN de jsDelivr.
+        2.  El navegador ejecuta el código JavaScript contenido en `script.js`.
         3.  Este código dinámicamente crea el botón flotante y lo añade a tu página web, sin necesidad de que copies y pegues el código JS directamente en tu HTML.
 
 ## 🧠 ¿Por Qué es Útil Esta Aproximación?
 
 * **Reutilización de Código:** Implementa el botón en múltiples páginas web simplemente añadiendo la etiqueta `<script>`. No necesitas duplicar el código en cada página.
-* **Actualizaciones Sencillas:** Si realizas cambios o mejoras en el archivo `github.js` dentro de este repositorio en GitHub, todas las páginas web que estén utilizando esta URL de jsDelivr se actualizarán automáticamente con la nueva versión del botón.
+* **Actualizaciones Sencillas:** Si realizas cambios o mejoras en el archivo `script.js` dentro de este repositorio en GitHub, todas las páginas web que estén utilizando esta URL de jsDelivr se actualizarán automáticamente con la nueva versión del botón.
 * **Profesionalismo:** Utilizar una CDN para servir tu script es una práctica común y profesional, similar a cómo se utilizan librerías de terceros como jQuery o Bootstrap.
 * **Rendimiento:** Las CDNs como jsDelivr están optimizadas para entregar contenido rápidamente a usuarios de todo el mundo, mejorando potencialmente el tiempo de carga de tu página.
 
 ## 💡 Extras y Posibles Mejoras
 
-* **Minificación del Script:** Para reducir el tamaño del archivo y mejorar aún más el tiempo de carga, puedes minificar el archivo `github.js` y renombrarlo a `github.min.js`.
+* **Minificación del Script:** Para reducir el tamaño del archivo y mejorar aún más el tiempo de carga, puedes minificar el archivo `script.js` y renombrarlo a `script.min.js`.
 * **Control de Versiones:** Puedes utilizar las etiquetas de Git para crear versiones de tu script (ej., `v1.0.0`). Luego, puedes referirte a una versión específica en la URL de jsDelivr:
     ```html
-    <script src="https://cdn.jsdelivr.net/gh/gianmattus-programmer/GitHub-Floating-Button@v1.0.0/github.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gianmattus-programmer/GitHub-Floating-Button@v1.0.0/dist/script.js"></script>
     ```
 * **Personalización Avanzada:**
     * **Temas:** El botón ya incluye soporte para modo oscuro y alto contraste.
