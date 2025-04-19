@@ -41,7 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
             width: 24px;
             height: 24px;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .github-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
         }
 
         .follow-text {
@@ -115,6 +133,54 @@ document.addEventListener("DOMContentLoaded", function () {
             .follow-text {
                 font-size: 12px;
             }
+        }
+
+        /* Dark Theme Support */
+        @media (prefers-color-scheme: dark) {
+            .github-button {
+                background-color: #1f2428;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            }
+            
+            .github-button:hover {
+                background-color: #2f363d;
+            }
+        }
+
+        /* High Contrast Mode */
+        @media (forced-colors: active) {
+            .github-button {
+                border: 2px solid ButtonText;
+                background-color: ButtonFace;
+            }
+            
+            .github-button svg {
+                forced-color-adjust: none;
+            }
+        }
+
+        /* Improved Touch Interaction */
+        @media (hover: none) {
+            .github-button {
+                width: 140px;
+                gap: 8px;
+            }
+
+            .follow-text {
+                font-size: 14px;
+                max-width: 100px;
+                padding-right: 8px;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        .github-button:focus {
+            outline: 3px solid #58a6ff;
+            outline-offset: 2px;
+        }
+
+        .github-button:focus:not(:focus-visible) {
+            outline: none;
         }
     `;
 
